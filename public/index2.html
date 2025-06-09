@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banten Satellite – Local Tile</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>html,body,#map{height:100%;margin:0}</style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Fokus ke Serang, pusat Banten
+    const map = L.map('map').setView([-6.12, 106.15], 11);
+
+    // Layer satelit lokal
+    L.tileLayer('http://localhost:3249/{z}/{x}/{y}.jpg', {
+      minZoom: 12,
+      maxZoom: 19,
+      attribution:
+        '&copy; Imagery © MapTiler, &copy; OpenStreetMap contributors (cached)',
+      tileSize: 512,      // Retina tile 512×512 ( @2x )
+      zoomOffset: -1      // supaya skala sama seperti tile 256px
+    }).addTo(map);
+
+    // (Opsional) tambahkan kontrol zoom, scale bar, dll.
+  </script>
+</body>
+</html>
