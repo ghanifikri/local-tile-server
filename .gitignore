@@ -1,1 +1,5 @@
-maps/
+# maps/
+.history
+node_modules
+maps/.DS_Store
+.DS_Store
