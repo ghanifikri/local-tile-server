@@ -8,8 +8,9 @@ import { mkdirp } from 'mkdirp';
 
 
 const PORT = 3249;
-const tileRoot = path.resolve('maps');        // tempat simpan cache
-const remoteTemplate = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+// const tileRoot = path.resolve('maps');        // tempat simpan cache
+const tileRoot = path.resolve('maps_satelite');        // tempat simpan cache
+const remoteTemplate = 'https://api.maptiler.com/maps/satellite/{z}/{x}/{y}@2x.jpg?key=6kvXS43xsUgDJVODlHuu';
 
 const app = express();
 app.use(morgan('tiny'));                       // log akses
